@@ -1,4 +1,5 @@
 <h2>Add new post</h2>
+
 <!--
 <ul class="tabs">
     <li><a href="#">Text</a></li>
@@ -9,6 +10,7 @@
 -->
 
 <form action="<?php echo base_url().'posts/add'; ?>" method="POST">
+    <h5>Do you have anything to share? Don't worry. Everything will be posted anonymously. We don't keep track of users.</h5>
     <table>
         <tr>
             <td>Title</td>
@@ -17,6 +19,20 @@
         <tr>
             <td>Description</td>
             <td><textarea name="description"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>OR</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td><input name="link" placeholder="link to any website, image or youtube video"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <?php echo recaptcha_get_html(RECAPTCHA_PUBLIC_KEY); ?>
+            </td>
         </tr>
         <tr>
             <td></td>

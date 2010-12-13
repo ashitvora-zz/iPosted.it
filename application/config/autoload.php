@@ -51,7 +51,7 @@ $autoload['libraries'] = array("database", "session");
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array("url", "session");
+$autoload['helper'] = array("url", "recaptcha");
 
 
 /*
@@ -63,7 +63,7 @@ $autoload['helper'] = array("url", "session");
 |	$autoload['plugin'] = array('captcha', 'js_calendar');
 */
 
-$autoload['plugin'] = array("captcha");
+$autoload['plugin'] = array();
 
 
 /*

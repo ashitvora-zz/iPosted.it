@@ -5,12 +5,9 @@
     <?php foreach($posts as $post): ?>
         
         <li class="post">
-            <h4 class="title"><a href="<?php echo base_url()."post/".$post->id; ?>"><?php echo $post->title; ?></a></h4>
+            <h2 class="title"><a href="<?php echo base_url()."post/".$post->id; ?>"><?php echo $post->title; ?></a></h2>
             <ul class="metadata">
-                <li>12 points</li>
-                <li>by John Smith</li>
-                <li>7 hours ago</li>
-                <li>32 comments</li>
+                <li><? echo $post->created_on; ?></li>
             </ul>
         </li>
         

@@ -42,22 +42,33 @@
                 color: #4e8a2d;
             }
             
-            h1.logo{
+            .error, .success{
+                padding: 5px;
+                border: 1px solid;
+            }
+            
+            .logo{
+                display: inline;
+            }
+            
+            .logo a{
                 color: #4161A6;
                 font-family: Nobile, serif;
-                font-size: 40px;
+                font-size: 20px;
                 font-style: normal;
-                letter-spacing: -1px;
+                font-weight: bold;
+                letter-spacing: 0px;
                 line-height: 1em;
                 text-decoration: none;
                 text-shadow: none;
                 text-transform: none;
                 word-spacing: 0em;
+                text-decoration: none;
             }
             
             
             /* TOP NAVMENU ---------------------------------------------------*/
-            .top-nav{
+            nav, .top-nav{
                 margin: 0;
                 padding: 5px;
                 list-style: none;
@@ -67,6 +78,14 @@
             .top-nav li{
                 display: inline;
                 margin-right: 10px;
+            }
+            
+            .top-nav.left{
+                float: left;
+            }
+            
+            .top-nav.right{
+                float: right;
             }
             
             
@@ -135,14 +154,27 @@
             }
             
             
+            /* New POST --------------------------------*/
+            form table td{
+                vertical-align: top;
+            }
+            
+            form input, form textarea{
+                width: 400px;
+                font-size: 1.1em;
+                padding: 5px;
+            }
+            
+            form textarea{
+                width: 400px;
+                height: 75px;
+            }
+            
             /* Comment Box ---------------------------- */
             textarea.comment{
                 display: block;
-                width: 500px;
-                height: 100px;
                 margin-bottom: 10px;
             }
-            
             
             ul.comments{
                 margin: 0;
@@ -164,7 +196,7 @@
             }
             
             
-            /* Individual Post */
+            /* Individual Post -----------------------------------------------*/
             h1.title{
                 
             }
@@ -195,16 +227,11 @@
     </head>
     
     <body>
-        <header>
-            <h1 class="logo"><?php echo $app_name; ?></h1>
-        </header>
-        
         <nav>
             <ul class="top-nav">
-                <li><a href="<?php echo base_url()."top"; ?>">Top</a></li>
-                <li><a href="<?php echo base_url()."hot"; ?>">Hot</a></li>
-                <li><a href="<?php echo base_url()."recent"; ?>">New</a></li>
-                <li><a href="<?php echo base_url()."saved"; ?>">Saved</a></li>
+                <li><h1 class="logo"><a href="<?php echo base_url(); ?>"><?php echo $app_name; ?></a></h1></li>
+                <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                <li><a href="<?php echo base_url()."new"; ?>">Submit New</a></li>
             </ul>
         </nav>
         
@@ -218,7 +245,7 @@
                 
                 $error_msg = $this->session->flashdata("error");
                 if( $error_msg ){
-                    echo "<p class='success'>$error_msg</p>";
+                    echo "<p class='error'>$error_msg</p>";
                 }
             ?>
             <content id="main">
@@ -226,6 +253,7 @@
             </content>
         
             <!-- sidebar -->
+            <!--
             <aside id="sidebar">
                 <section>
                     <a href="<?php echo base_url()."posts/create"; ?>">Add new post</a>
@@ -241,12 +269,13 @@
                     <div class="clear"></div>
                 </section>
             </aside>
+            -->
         </section>
         
         
         
         <div class="footer">
-            &copy; <?php echo $app_name; ?>
+            &copy; <?php echo $app_name; ?> | Session ID:  <?php echo $this->session->userdata("session_id"); ?>
         </div>
     </body>
 </html>

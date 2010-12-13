@@ -43,14 +43,12 @@
 $route['default_controller'] = "posts";
 $route['scaffolding_trigger'] = "";
 
-$route['top'] = "posts/index/top";
-$route['hot'] = "posts/index/hot";
-$route['recent'] = "posts/index/recent";
-$route['saved'] = "posts/index/saved";
+$route['new'] = "posts/create";
 
 $route['post/(:num)'] = "posts/show/$1";
 $route['post/comment/(:num)'] = "posts/comment/$1";
 $route['post/like/(:num)'] = "posts/like/$1";
+$route['post/flag/(:num)'] = "posts/flag/$1";
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */
